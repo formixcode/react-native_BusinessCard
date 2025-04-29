@@ -17,7 +17,7 @@ export default function App() {
   const name = 'Witthaya Chomchoei'
   const links = {
     github: 'SavinVadim1312',
-    email: 'vadim@notjust.dev',
+    email: 'contact@formixcode.com',
     x: 'VadimNotJustDev',
   }
 
@@ -36,7 +36,7 @@ export default function App() {
   }
 
   const onContactMe = () => {
-    Linking.openURL('mailto:vadim@notjust.dev')
+    Linking.openURL('mailto:contact@formixcode.com')
   }
 
   return (
