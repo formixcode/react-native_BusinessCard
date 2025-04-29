@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar'
 import {
   StyleSheet,
   Text,
@@ -7,23 +7,23 @@ import {
   ScrollView,
   Button,
   Linking,
-} from 'react-native';
-import { FontAwesome6 } from '@expo/vector-icons';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import ProjectCard from './ProjectCard';
-
+  TouchableOpacity,
+} from 'react-native'
+import { FontAwesome6 } from '@expo/vector-icons'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import ProjectCard from './ProjectCard'
 
 export default function App() {
-  const name = 'Vadim Savin';
+  const name = 'Witthaya Chomchoei'
   const links = {
     github: 'SavinVadim1312',
     email: 'vadim@notjust.dev',
     x: 'VadimNotJustDev',
-  };
+  }
 
   const getOccupation = () => {
-    return 'Founder of notJust.dev';
-  };
+    return 'Founder of formixcode.com'
+  }
 
   const renderIcons = () => {
     return (
@@ -32,12 +32,12 @@ export default function App() {
         {links.x && <FontAwesome6 name="x-twitter" size={24} color="black" />}
         {links.email && <FontAwesome6 name="at" size={24} color="black" />}
       </View>
-    );
-  };
+    )
+  }
 
   const onContactMe = () => {
-    Linking.openURL('mailto:vadim@notjust.dev');
-  };
+    Linking.openURL('mailto:vadim@notjust.dev')
+  }
 
   return (
     <SafeAreaProvider>
@@ -52,7 +52,7 @@ export default function App() {
             />
 
             <Image
-              source={require('./assets/vadim.png')}
+              source={require('./assets/witthaya.png')}
               style={{
                 width: 150,
                 height: 150,
@@ -68,7 +68,12 @@ export default function App() {
 
             {renderIcons()}
 
-            <Button title="Contact me" onPress={onContactMe} />
+            <TouchableOpacity
+              onPress={onContactMe}
+              style={styles.buttonContainer}
+            >
+              <Text style={styles.buttonText}>Contact me</Text>
+            </TouchableOpacity>
 
             <Text style={{ padding: 10, fontSize: 16, lineHeight: 20 }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -107,7 +112,7 @@ export default function App() {
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -117,4 +122,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+  buttonContainer: {
+    backgroundColor: 'purple',
+    paddingVertical: 12,
+    paddingHorizontal: 25,
+    borderRadius: 25, // Increased for more rounded corners
+    marginTop: 15, // Added margin top for spacing
+    // iOS Shadow
+    shadowColor: 'purple',
+    shadowOffset: { width: 0, height: 4 }, // Adjusted shadow offset
+    shadowOpacity: 0.4, // Adjusted shadow opacity
+    shadowRadius: 4, // Adjusted shadow radius
+    // Android Shadow
+    elevation: 6, // Adjusted elevation for Android shadow
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
+    textAlign: 'center',
+  },
+})
