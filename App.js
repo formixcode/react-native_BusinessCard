@@ -16,9 +16,9 @@ import ProjectCard from './ProjectCard'
 export default function App() {
   const name = 'Witthaya Chomchoei'
   const links = {
-    github: 'SavinVadim1312',
+    github: 'formixcode',
     email: 'contact@formixcode.com',
-    x: 'VadimNotJustDev',
+    x: 'formixcode',
   }
 
   const getOccupation = () => {
